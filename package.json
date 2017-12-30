@@ -12,8 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@0xproject/subproviders": "^0.1.1",
+    "0x.js": "^0.29.0",
+    "@0xproject/subproviders": "^0.2.0",
+    "@0xproject/types": "^0.1.2",
     "@types/node": "^8.0.57",
+    "bignumber": "^1.1.0",
     "eth-sig-util": "^1.2.0",
     "ethereumjs-util": "^5.1.1",
     "ethjs": "^0.3.0",
@@ -22,8 +25,8 @@
     "web3-typescript-typings": "^0.7.2"
   },
   "devDependencies": {
+    "typescript": "^2.6.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7",
-    "typescript": "^2.6.2"
+    "webpack-dev-server": "^2.9.7"
   }
 }

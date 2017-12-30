@@ -9,6 +9,8 @@ import {
 } from '@0xproject/subproviders';
 
 import {promisify} from '@0xproject/utils';
+import {ZeroEx} from '0x.js'
+import { Web3Provider } from '0x.js/lib/src/types';
 
 let networkId = 42;
 
@@ -16,12 +18,14 @@ declare var personalSignButton: any;
 declare var ledgerProviderButton: any;
 declare var injectedProviderButton: any;
 declare var defaultProviderButton: any;
+declare var signZeroExOrderButton: any;
 declare var ethSignButton: any;
 declare var web3: any;
 
 async function startApp(): Promise<void> {
-  var engine: any;
   var web3: any;
+  var engine: Web3ProviderEngine;
+  var zeroEx: ZeroEx;
 
   const injectedWeb3 = (window as any).web3;
   const cachedProvider = injectedWeb3.currentProvider;
@@ -31,6 +35,7 @@ async function startApp(): Promise<void> {
   const loadDefaultProvider = (event: any) => {
       console.log('Loading Default provider');
       web3 = injectedWeb3;
+      zeroEx = new ZeroEx(web3.currentProvider, {networkId});
   }
   defaultProviderButton.addEventListener('click', loadDefaultProvider);
   loadDefaultProvider(undefined);
@@ -42,6 +47,7 @@ async function startApp(): Promise<void> {
       engine.addProvider(redundantRPC);
       engine.start();
       web3 = new Web3(engine);
+      zeroEx = new ZeroEx(web3.currentProvider, {networkId});
   })
 
   ledgerProviderButton.addEventListener('click', (event: any) => {
@@ -52,6 +58,7 @@ async function startApp(): Promise<void> {
       engine.addProvider(redundantRPC);
       engine.start();
       web3 = new Web3(engine);
+      zeroEx = new ZeroEx(web3.currentProvider, {networkId});
   })
 
   ethSignButton.addEventListener('click', async (event: any) => {
@@ -65,6 +72,13 @@ async function startApp(): Promise<void> {
       event.preventDefault()
       const accounts = await promisify<string>(web3.eth.getAccounts)();
       const signData = await promisify<string>(web3.personal.sign)(msg, accounts[0]);
+      console.log('SIGNED:', signData)
+  })
+
+  signZeroExOrderButton.addEventListener('click', async (event: any) => {
+      event.preventDefault()
+      const accounts = await promisify<string>(web3.eth.getAccounts)();
+      const signData = await zeroEx.signOrderHashAsync(msg, accounts[0]);
       console.log('SIGNED:', signData)
   })
 }
