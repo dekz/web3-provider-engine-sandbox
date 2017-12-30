@@ -1,0 +1,63 @@
+Arguments: 
+  /Users/jacob/.nvm/versions/node/v8.6.0/bin/node /Users/jacob/.nvm/versions/node/v8.6.0/bin/yarn install
+
+PATH: 
+  /Users/jacob/node_modules/.bin:/Users/jacob/.node/bin:/Users/jacob/.nvm/versions/node/v8.6.0/bin:/Users/jacob/.rbenv/shims:/Users/jacob/bin:/Users/jacob/.rbenv/bin:/Users/jacob/environment/go/bin:/usr/local/bin:/usr/local/sbin:/Users/jacob/bin:/Users/jacob/.zplug/bin:/Users/jacob/.nix-profile/bin:/Users/jacob/.nix-profile/sbin:/Users/jacob/.nix-profile/lib/kde4/libexec:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/default/sbin:/nix/var/nix/profiles/default/lib/kde4/libexec:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jacob/n/bin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.6.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "js-eth-personal-sign-examples",
+    "version": "1.0.0",
+    "description": "Simplest possible signature examples, for use with [MetaMask](https://metamask.io).",
+    "main": "./lib/index",
+    "types": "./lib/index",
+    "typings": "./lib/index",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "browserify -t brfs index.js -o bundle.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/flyswatter/js-eth-personal-sign-examples.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/flyswatter/js-eth-personal-sign-examples/issues"
+    },
+    "homepage": "https://github.com/flyswatter/js-eth-personal-sign-examples#readme",
+    "dependencies": {
+      "@types/node": "^8.0.57",
+      "eth-sig-util": "^1.2.0",
+      "ethereumjs-util": "^5.1.1",
+      "ethjs": "^0.3.0",
+      "web3": "0.20.0",
+      "web3-provider-engine": "^13.3.3",
+      "web3-typescript-typings": "^0.7.2",
+      "webpack": "^3.10.0",
+      "webpack-dev-server": "^2.9.7"
+    },
+    "devDependencies": {
+      "brfs": "^1.4.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com registry.yarnpkg.com:443
+      at errnoException (dns.js:53:10)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:95:26)

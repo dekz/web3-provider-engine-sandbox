@@ -1,0 +1,29 @@
+{
+  "name": "provider-engine-sandbox",
+  "version": "0.0.1",
+  "description": "Simplest possible provider engine sandbox, for use with [MetaMask](https://metamask.io), ledger and more.",
+  "main": "./lib/index",
+  "types": "./lib/index",
+  "typings": "./lib/index",
+  "scripts": {
+    "build": "tsc && webpack",
+    "server": "tsc && webpack-dev-server --https"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@0xproject/subproviders": "^0.1.1",
+    "@types/node": "^8.0.57",
+    "eth-sig-util": "^1.2.0",
+    "ethereumjs-util": "^5.1.1",
+    "ethjs": "^0.3.0",
+    "web3": "0.20.0",
+    "web3-provider-engine": "^13.3.3",
+    "web3-typescript-typings": "^0.7.2",
+  },
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
+    "typescript": "^2.6.2"
+  }
+}
