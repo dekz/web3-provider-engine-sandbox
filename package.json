@@ -19,7 +19,7 @@
     "ethjs": "^0.3.0",
     "web3": "0.20.0",
     "web3-provider-engine": "^13.3.3",
-    "web3-typescript-typings": "^0.7.2",
+    "web3-typescript-typings": "^0.7.2"
   },
   "devDependencies": {
     "webpack": "^3.10.0",
